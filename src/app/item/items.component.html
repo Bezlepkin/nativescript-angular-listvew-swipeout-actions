@@ -1,11 +1,15 @@
 <ActionBar title="My App"> </ActionBar>
 
 <GridLayout>
-  <ListView [items]="items">
-    <ng-template let-item="item">
-      <StackLayout [nsRouterLink]="['/item', item.id]">
-        <Label [text]="item.name"></Label>
-      </StackLayout>
+  <ListView [items]="items" class="list-view list-group" (loaded)="onListViewLoaded($event)" (pan)="onListViewPan($event)">
+    <ng-template let-item="item" let-i="index">
+      <GridLayout class="list-view-item">
+        <GridLayout id="{{ 'item-' + i }}" height="60" class="list-view-item-inner"
+          orientation="vertical" (loaded)="onSwipeoutLoaded($event)" (tap)="onTapListItem(i, $event)"
+          (pan)="onPanListItem(i, $event)">
+          <Label [text]="item.title" class="list-group-item list-view-title" color="white"></Label>
+        </GridLayout>
+      </GridLayout>
     </ng-template>
   </ListView>
 </GridLayout>
