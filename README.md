@@ -1,3 +1,3 @@
-# nativescript-stackblitz-templates-jkrg4v
+# Example of swipeout implementation in NativeScript for Angular
 
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/nativescript-stackblitz-templates-jkrg4v)
+![Запись-экрана-2022-07-18-в-17 19 06](https://user-images.githubusercontent.com/10475699/179534321-5b6237c6-0cac-43a6-9c6b-1327557a50a8.gif)
