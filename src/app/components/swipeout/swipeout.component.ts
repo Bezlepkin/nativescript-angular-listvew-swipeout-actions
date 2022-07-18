@@ -127,16 +127,12 @@ export class SwipeoutComponent implements OnInit, OnChanges {
       return;
     }
 
-    const swipeout = this.swipeout;
     if (args.state === 1) {
       this.prevDeltaX = 0;
       this.swipeProgressStartedEvent.emit(this.index);
+
     } else if (args.state === 2) {
       this.prevIndex = this.index;
-      if (args.view.translateX !== 0) {
-        // console.log(args.view.translateX);
-        //this.isOpened = false;
-      }
       const x = args.view.translateX + args.deltaX - this.prevDeltaX;
 
       if (x < 0) {
@@ -159,12 +155,13 @@ export class SwipeoutComponent implements OnInit, OnChanges {
 
       this.prevDeltaX = args.deltaX;
       // this.prevIndex = this.index;
+
     } else if (args.state === 3) {
-      const listItemHeight = swipeout.getMeasuredHeight() / 2;
+      const listItemHeight = this.swipeout.getMeasuredHeight() / 2;
 
       if (
-        swipeout.translateX < listItemHeight / -2 ||
-        swipeout.translateX < listItemHeight * -1
+        this.swipeout.translateX < listItemHeight / -2 ||
+        this.swipeout.translateX < listItemHeight * -1
       ) {
         this.open(this.swipeout);
       } else {
