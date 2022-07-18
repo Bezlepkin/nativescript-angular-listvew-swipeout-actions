@@ -1,15 +1,15 @@
 <ActionBar title="My App"> </ActionBar>
 
 <GridLayout>
-  <ListView [items]="items" class="list-view list-group" (loaded)="onListViewLoaded($event)" (pan)="onListViewPan($event)">
+  <ListView [items]="items" separatorColor="transparent" class="list-view swipeout" (loaded)="onListViewLoaded($event)"
+    (itemLoading)="onListViewItemLoading($event)" (pan)="onListViewPan($event)">
     <ng-template let-item="item" let-i="index">
-      <GridLayout class="list-view-item">
-        <GridLayout id="{{ 'item-' + i }}" height="60" class="list-view-item-inner"
-          orientation="vertical" (loaded)="onSwipeoutLoaded($event)" (tap)="onTapListItem(i, $event)"
-          (pan)="onPanListItem(i, $event)">
-          <Label [text]="item.title" class="list-group-item list-view-title" color="white"></Label>
-        </GridLayout>
-      </GridLayout>
+      <StackLayout class="list-view-item">
+        <app-swipeout (prevIndexChanged)="onPrevIndexChanged($event)"
+          (swipeProgressStarted)="onSwipeProgressStarted($event)"
+          (swipeProgressFinished)="onSwipeProgressFinished($event)" [disabled]="isActiveScroll" [index]="i"
+          [prevIndex]="prevIndex" [title]="item?.title" [text]="item?.text"></app-swipeout>
+      </StackLayout>
     </ng-template>
   </ListView>
 </GridLayout>

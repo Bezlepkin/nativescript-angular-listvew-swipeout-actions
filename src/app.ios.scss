@@ -1,18 +1,12 @@
-@import "./assets/scss/main";
+@import "./scss/common";
 
-/* lists */
 .list-view {
 	.list-view-item {
-		margin: 0;
 		padding: 0;
-		padding-left: 16;
-		background-color: #fff;
-		.list-view-item-inner {
+		.list-view-item-content {
 			width: 100%;
-			padding: 10 10 10 0;
-			margin-top: 0;
-			border-bottom-width: 0.7;
-			border-bottom-color: #f1f1f1;
+			padding: 8 16;
+			border: none;
 			.list-view-title {
 				font-weight: bold;
 				padding: 0;
@@ -46,9 +40,8 @@
 
 	.list-view {
 		.list-view-item {
-			background-color: #222;
-			.list-view-item-inner {
-				border-bottom-color: #222;
+			.list-view-item-content {
+				background-color: #222;
 				.list-view-text {
 					color: #fff;
 				}

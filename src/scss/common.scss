@@ -1,0 +1,22 @@
+@import "~@nativescript/theme/core";
+@import "~@nativescript/theme/default";
+@import "./fonts/ionicons/ionicons";
+
+.md {
+  font-family: 'Material Design Icons', 'materialdesignicons-webfont';
+  font-weight: 400;
+}
+
+
+.ion {
+  font-family: 'Ionicons', 'ionicons';
+  font-weight: 500;
+}
+
+.fas {
+  font-family: 'Font Awesome 6 Free', 'fa-solid-900';
+  font-weight: 900;
+}
+
+
+ListView { separator-color: blue; }

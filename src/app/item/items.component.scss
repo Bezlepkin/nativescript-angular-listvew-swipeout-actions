@@ -3,6 +3,11 @@ ListView { separator-color: transparent; }
 .swipeout {
   .swipeout-area {
     width: 100%;
-    background-color: #ff3b30;
+    &.swipeout-direction-left {
+      background-color: #ff3b30;
+    }
+    &.swipeout-direction-right {
+      background-color: #222;
+    }
   }
 }

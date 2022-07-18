@@ -1,0 +1,9 @@
+.swipeout-area {
+  width: 100%;
+  &.swipeout-direction-left {
+    background-color: #ff3b30;
+  }
+  &.swipeout-direction-right {
+    background-color: transparent;
+  }
+}

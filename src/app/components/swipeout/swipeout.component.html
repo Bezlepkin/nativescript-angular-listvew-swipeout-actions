@@ -1,0 +1,15 @@
+<GridLayout class="swipeout" (loaded)="onListItemLoaded($event)">
+  <GridLayout row="0" [class]="'swipeout-area swipeout-direction-' + direction" horizontalAlignment="right">
+    <StackLayout class="swipeout-actions swipeout-actions-right" horizontalAlignment="right"
+      verticalAlignment="center" [width]="swipeoutActionsItemWidth" [height]="swipeoutActionsItemHeight">
+      <Label text="&#xf1f8;" class="fas text-center" fontSize="18"
+        (loaded)="onSwipeoutActionsLabelLoaded($event)"></Label>
+    </StackLayout>
+  </GridLayout>
+
+  <StackLayout id="{{ 'item-' + index }}" class="list-view-item-content" orientation="vertical"
+    (loaded)="onSwipeoutLoaded($event)" (tap)="onTap($event)" (pan)="onPanListItem($event)">
+    <Label class="list-view-title" [text]="title"></Label>
+    <Label class="list-view-text" [text]="text"></Label>
+  </StackLayout>
+</GridLayout>
